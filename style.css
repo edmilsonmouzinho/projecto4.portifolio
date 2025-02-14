@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor02: #D9D6D2; 
+    --cor01: #a8a8a8;
+    --cor03: #8B8C81;
+    --cor04: #323230; 
+    --cor05: #0D0D0C;
+}
+
+body {
+    min-height: 100vh;
+    
+}
+
+img {
+    height:100%;
+    width: 100%;
+
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1.2fr 1fr 1fr;
+}
+
+/*Painel a esquerda*/
+.left {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr) ;
+    background-color: var(--cor04);
+    color: var(--cor01);
+    padding: 40px;
+    text-align: justify;
+    
+}
+
+.left nav a {
+    text-decoration: none;
+    color: var(--cor01);
+    padding-right: 30px;
+    font-size: 1.3em;
+}
+
+.left h2 {
+    color: #eeeee7;
+    line-height: 3em;
+    font-size: 3em;
+}
+
+.descricao {
+    align-self: center;
+}
+
+.left p {
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+footer {
+    align-self: end;
+    text-align: center;
+}
+
+
+/*Painel do meio*/
+.midle {
+    background-color:;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+}
+
+/*Painel a direita*/
+.right {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.text1, .text2 {
+    padding: 40px;
+    background-color: #eeeee7;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    color: #323230;
+}
+
+.text1, .text2 h2 {
+    line-height: 1.5em;
+}
+
+@media screen and (max-width: 1500px) {
+    .container {
+        width: 100vw;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .right {
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: 500px 400px 400px;
+    }
+
+    .midle {
+        grid-template-columns: 1fr 1fr;
+        grid-row: 2;
+        grid-template-rows: 1fr;
+    }
+
+    .midle img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .right img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    .container {
+        display: block;
+    }
+
+    .left {
+        height: 500px;
+    }
+
+    nav {
+        padding-top: 15px;
+        justify-self: center;
+    }
+
+    .midle {
+        display: block;
+    }
+
+    .right {
+        display: block;
+        border-top: 1px solid rgba(0, 0, 0, 0.226);
+    }
+}
